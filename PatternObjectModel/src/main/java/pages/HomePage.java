@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import cucumber.api.java.en.*;
 import wdMethods.ProjectMethods;
 
 public class HomePage extends ProjectMethods{
@@ -32,13 +31,6 @@ public class HomePage extends ProjectMethods{
 		return this;		
 	}
 	
-	@FindBy(how=How.LINK_TEXT,using="CRM/SFA")
-	private WebElement eleCRMSFA;
-	@When("click crmsfa")
-	public MyHomePage clickCRMSFA() {
-	click(eleCRMSFA);
-		return new MyHomePage();		
-	}
 	
 	
 	

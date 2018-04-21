@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
 
-import cucumber.api.java.en.*;
 import wdMethods.ProjectMethods;
 
 public class LoginPage extends ProjectMethods{
@@ -19,7 +18,7 @@ public class LoginPage extends ProjectMethods{
 	
 	@FindBy(how=How.ID,using="username")
 	private WebElement eleUserName;
-	@Given("enter username as (.*)")
+	
 	public LoginPage enterUserName(String data) {
 		type(eleUserName, data);
 		return this;
@@ -28,7 +27,7 @@ public class LoginPage extends ProjectMethods{
 	
 	@FindBy(how=How.ID,using="password")
 	private WebElement elePassword;
-	@And("enter password as (.*)")
+	
 	public LoginPage enterPassword(String data) {
 		type(elePassword, data);
 		return this;
@@ -37,7 +36,7 @@ public class LoginPage extends ProjectMethods{
 	
 	@FindBy(how=How.CLASS_NAME,using="decorativeSubmit")
 	private WebElement eleLogin;
-	@And("click login button")
+	
 	public HomePage clickLogIn() {
 		click(eleLogin);
 		return new HomePage();		
