@@ -32,6 +32,14 @@ public class ViewLead extends ProjectMethods{
 		click(eleeditBtn);
 		return new EditLeadPage();		
 	}
+	
+	@FindBy(how=How.LINK_TEXT,using="Delete")
+	private WebElement eleDelBtn;
+	@And("click on delete lead button")
+	public MyLeads clickDel() {
+		click(eleDelBtn);
+		return new MyLeads();		
+	}
 
 
 

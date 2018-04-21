@@ -7,6 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import wdMethods.ProjectMethods;
 
 public class FindleadPage extends ProjectMethods{
@@ -28,7 +29,7 @@ public class FindleadPage extends ProjectMethods{
 	@And("click find leads button")
 	public FindleadPage clickFindLeadsBtn() throws InterruptedException {
 		click(elefindLeadsBtn);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		return this;		
 	}
 
@@ -38,5 +39,14 @@ public class FindleadPage extends ProjectMethods{
 	public ViewLead clickFirstLead(){
 		click(eleFirstLead);
 		return new ViewLead();		
+	}
+	
+	@FindBy(how=How.XPATH,using="//div[text()='No records to display']")
+	private WebElement eleMessageNoRecords;
+	@Then("validate No Records Found Message")
+	public ViewLead validateMessage() {
+		verifyPartialText(eleMessageNoRecords, "No Records");
+		return null;
+		
 	}
 }

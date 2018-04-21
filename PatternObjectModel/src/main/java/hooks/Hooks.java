@@ -8,7 +8,7 @@ public class Hooks extends SeMethods {
 	@Before
 	public void before() {
 		startResult();
-		startTestModule("createLead", "Login leaftaps and create a lead");	
+		startTestModule("Lead", "Login leaftaps and work on leads");	
 		test = startTestCase("Leads");
 		test.assignCategory("Smoke");
 		test.assignAuthor("Vaishnav");
