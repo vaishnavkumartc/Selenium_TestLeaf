@@ -1,5 +1,9 @@
 package testcases;
 
+import org.testng.annotations.Test;
+
+import net.bytebuddy.utility.RandomString;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -20,7 +24,7 @@ public class CreateAccountPOM extends ProjectMethods{
 	}
 	@Test
 	public void createAccount() throws InterruptedException {
-		
+		String randomString = generateRandomString();
 		AccountDetailsPage accountPage = new LoginPage()
 		.enterUserName("DemoSalesManager")
 		.enterPassword("crmsfa")
@@ -28,7 +32,7 @@ public class CreateAccountPOM extends ProjectMethods{
 		.clickCRMSFA()
 		.clickAccounts()
 		.clickCreateAccount()
-		.typeAccountName("justlikethat5")
+		.typeAccountName(randomString)
 		.selectIndustry("Computer Hardware")
 		.selectCurrency("INR - Indian Rupee")
 		.selectDataSource("Direct Mail")

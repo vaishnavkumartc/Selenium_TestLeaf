@@ -1,5 +1,6 @@
 package wdMethods;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -54,6 +55,14 @@ public class ProjectMethods extends SeMethods{
 	public  Object[][] getData(){
 		return DataInputProvider.getSheet(dataSheetName);		
 	}	
+	
+	public String generateRandomString() {
+		int length = 10;
+	    boolean useLetters = true;
+	    boolean useNumbers = false;
+	    String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);
+	    return generatedString;
+	}
 
 }
 
